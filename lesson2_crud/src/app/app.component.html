@@ -1,0 +1,41 @@
+<div class="container">
+
+
+  <h2>List User</h2>
+
+  <input [(ngModel)]="student.id" placeholder="id">
+  <input [(ngModel)]="student.name" placeholder="input name">
+  <input [(ngModel)]="student.address"placeholder="input address">
+  <input [(ngModel)]="student.phoneNumber" placeholder="input phone number">
+  <input [(ngModel)]="student.email" placeholder="input email">
+  <input [(ngModel)]="student.img" placeholder="input img link">
+  <button (click)="create()" class="btn btn-danger" style="background: #07d77a" >submit</button>
+  <br>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>address</th>
+      <th>phone number</th>
+      <th>Email</th>
+      <th>img</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let c of list">
+      <td>{{c.id}}</td>
+      <td>{{c.name}}</td>
+      <td>{{c.address}}</td>
+      <td>{{c.phoneNumber}}</td>
+      <td>{{c.email}}</td>
+      <td><img src="{{c.img}}" height="250"/></td>
+      <td><button type="button" (click)="showEdit(c)" class="btn btn-warning">Edit</button></td>
+      <td><button type="button" (click)="delete(c.id)" class="btn btn-danger">Delete</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
